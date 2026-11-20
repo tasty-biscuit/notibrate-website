@@ -4,22 +4,60 @@
    You normally won't need to edit this file. To change a colour, change
    it once in the ":root" list just below and it updates everywhere.
    All colour pairs here meet WCAG 2.2 AA contrast (at least 4.5:1).
+   Light and dark: the site follows the visitor's own browser/phone setting.
+   Dark colours are in the second list ("prefers-color-scheme: dark").
    No web fonts are loaded: the site uses the phone/computer's own fonts,
    so nothing is requested from Google or any other company.
    ===================================================================== */
 
 :root {
-  --blue: #0066CC;        /* main blue: buttons, links (white text on it) */
-  --name-blue: #213F80;   /* dark blue: the "Notibrate" name, headings */
+  /* Tells the browser the site has both looks, so scrollbars etc. match too */
+  color-scheme: light dark;
+
+  /* ----- LIGHT colours (the default) ----- */
+  --bg: #FFFFFF;          /* page background */
+  --text: #1A1A1A;        /* normal body text */
+  --muted: #4A4A4A;       /* quieter text */
+  --heading: #213F80;     /* dark name blue: "Notibrate" name, headings, menu */
+  --link: #0066CC;        /* links in text */
+  --link-hover: #213F80;
+  --blue: #0066CC;        /* main blue: buttons, current menu item, step numbers */
+  --blue-hover: #213F80;
+  --on-blue: #FFFFFF;     /* text on the main blue */
   --card: #D6E4FF;        /* soft blue card background */
   --card-text: #001B3D;   /* text on soft blue cards */
-  --text: #1A1A1A;        /* normal body text */
-  --muted: #4A4A4A;       /* quieter text (still 8:1 on white) */
-  --white: #FFFFFF;
   --line: #B8C7E0;        /* thin borders */
-  --placeholder: #5A6B85; /* dashed placeholder boxes (4.9:1 on white) */
+  --placeholder: #5A6B85; /* dashed placeholder boxes */
+  --footer-bg: #213F80;
+  --footer-text: #FFFFFF;
+  --footer-hover: #D6E4FF;
+  --focus: #213F80;       /* keyboard focus ring */
+
   --radius: 12px;
   --max: 64rem;           /* widest the page content gets */
+}
+
+/* ----- DARK colours: used when the visitor's browser or phone is set to dark ----- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0F1A2E;
+    --text: #E8EDF5;
+    --muted: #B8C2D3;
+    --heading: #A9C7FF;
+    --link: #8AB4F8;
+    --link-hover: #A9C7FF;
+    --blue: #0066CC;      /* same main blue, still with white text */
+    --blue-hover: #004C99;
+    --on-blue: #FFFFFF;
+    --card: #1C2C4A;
+    --card-text: #D6E4FF;
+    --line: #34476B;
+    --placeholder: #9AAAC4;
+    --footer-bg: #08101F;
+    --footer-text: #FFFFFF;
+    --footer-hover: #A9C7FF;
+    --focus: #A9C7FF;
+  }
 }
 
 /* ---------- Basics ---------- */
@@ -36,7 +74,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--white);
+  background: var(--bg);
   color: var(--text);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 1.0625rem;
@@ -49,7 +87,7 @@ body {
 img { max-width: 100%; height: auto; }
 
 h1, h2, h3 {
-  color: var(--name-blue);
+  color: var(--heading);
   line-height: 1.25;
   margin: 1.6em 0 0.5em;
 }
@@ -65,12 +103,12 @@ h1[tabindex="-1"]:focus { outline: none; }
 p, ul, ol { margin: 0 0 1em; }
 li + li { margin-top: 0.35em; }
 
-a { color: var(--blue); text-underline-offset: 0.15em; }
-a:hover { color: var(--name-blue); }
+a { color: var(--link); text-underline-offset: 0.15em; }
+a:hover { color: var(--link-hover); }
 
 /* Clear keyboard focus ring on everything you can tab to. */
 :focus-visible {
-  outline: 3px solid var(--name-blue);
+  outline: 3px solid var(--focus);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -82,12 +120,12 @@ a:hover { color: var(--name-blue); }
   left: 1rem;
   top: -10rem;
   background: var(--blue);
-  color: var(--white);
+  color: var(--on-blue);
   padding: 0.6rem 1rem;
   border-radius: 6px;
   z-index: 10;
 }
-.skip-link:focus { top: 1rem; color: var(--white); }
+.skip-link:focus { top: 1rem; color: var(--on-blue); }
 
 /* ---------- Page width ---------- */
 
@@ -101,7 +139,7 @@ a:hover { color: var(--name-blue); }
 
 .site-header {
   border-bottom: 1px solid var(--line);
-  background: var(--white);
+  background: var(--bg);
 }
 .site-header .wrap {
   display: flex;
@@ -117,12 +155,12 @@ a:hover { color: var(--name-blue); }
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  color: var(--name-blue);
+  color: var(--heading);
   font-weight: 700;
   font-size: 1.35rem;
   text-decoration: none;
 }
-.brand:hover { color: var(--name-blue); }
+.brand:hover { color: var(--heading); }
 
 /* LOGO PLACEHOLDER – remove this block's use once the real logo is ready */
 .logo-placeholder {
@@ -153,14 +191,14 @@ a:hover { color: var(--name-blue); }
   display: block;
   padding: 0.45rem 0.7rem;
   border-radius: 8px;
-  color: var(--name-blue);
+  color: var(--heading);
   text-decoration: none;
   font-weight: 600;
 }
 .site-nav a:hover { background: var(--card); color: var(--card-text); }
 .site-nav a[aria-current="page"] {
   background: var(--blue);
-  color: var(--white);
+  color: var(--on-blue);
 }
 
 /* ---------- Main content ---------- */
@@ -194,14 +232,14 @@ main { padding-bottom: 3rem; }
 .button {
   display: inline-block;
   background: var(--blue);
-  color: var(--white);
+  color: var(--on-blue);
   padding: 0.75rem 1.25rem;
   border: 2px solid transparent; /* becomes visible in Windows High Contrast mode */
   border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
 }
-.button:hover { background: var(--name-blue); color: var(--white); }
+.button:hover { background: var(--blue-hover); color: var(--on-blue); }
 
 .actions {
   display: flex;
@@ -312,7 +350,7 @@ main { padding-bottom: 3rem; }
   margin-right: 0.6rem;
   border-radius: 50%;
   background: var(--blue);
-  color: var(--white);
+  color: var(--on-blue);
   font-size: 1rem;
   vertical-align: 0.1em;
 }
@@ -345,14 +383,14 @@ main { padding-bottom: 3rem; }
 /* ---------- Footer ---------- */
 
 .site-footer {
-  background: var(--name-blue);
-  color: var(--white);
+  background: var(--footer-bg);
+  color: var(--footer-text);
   padding: 2rem 0;
   font-size: 0.98rem;
 }
-.site-footer a { color: var(--white); }
-.site-footer a:hover { color: var(--card); }
-.site-footer :focus-visible { outline-color: var(--white); }
+.site-footer a { color: var(--footer-text); }
+.site-footer a:hover { color: var(--footer-hover); }
+.site-footer :focus-visible { outline-color: var(--footer-text); }
 .site-footer p { margin: 0 0 0.5rem; }
 .footer-links {
   display: flex;
