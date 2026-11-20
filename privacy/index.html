@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Lets text follow the text size chosen in the phone's settings -->
+  <meta name="text-scale" content="scale">
   <title>Privacy policy – Notibrate</title>
   <meta name="description" content="Notibrate's privacy policy: Notibrate doesn't collect, store or share any personal information.">
   <link rel="icon" href="data:,">
@@ -24,8 +26,8 @@
           <li><a href="/">Home</a></li>
           <li><a href="/how-to/">How to use</a></li>
           <li><a href="/faq/">FAQ</a></li>
-          <li><a href="/versions/">Versions</a></li>
-          <li><a href="/privacy/" aria-current="page">Privacy</a></li>
+          <li><a href="/versions/">Version history</a></li>
+          <li><a href="/privacy/" aria-current="page">Privacy policy</a></li>
         </ul>
       </nav>
     </div>
@@ -34,9 +36,9 @@
   <!-- ===== PAGE CONTENT – edit the text below =====
        This page's address must stay notibrate.com/privacy (the app and Google Play link to it).
        Whenever you change this policy, update the "Last updated" date. -->
-  <main id="main" tabindex="-1">
+  <main>
     <div class="wrap readable">
-      <h1>Notibrate privacy policy</h1>
+      <h1 id="main" tabindex="-1">Notibrate privacy policy</h1>
 
       <!-- LAST UPDATED: set this to the day you publish the site / change the policy -->
       <p class="intro">Last updated: 20 November 2026</p>
@@ -99,12 +101,14 @@
   <!-- ===== FOOTER (the same on every page) ===== -->
   <footer class="site-footer">
     <div class="wrap">
-      <ul class="footer-links">
-        <li><a href="/how-to/">How to use</a></li>
-        <li><a href="/faq/">FAQ</a></li>
-        <li><a href="/versions/">Version history</a></li>
-        <li><a href="/privacy/">Privacy policy</a></li>
-      </ul>
+      <nav aria-label="Footer">
+        <ul class="footer-links">
+          <li><a href="/how-to/">How to use</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/versions/">Version history</a></li>
+          <li><a href="/privacy/">Privacy policy</a></li>
+        </ul>
+      </nav>
       <p>Questions, ideas or problems? Email <a href="mailto:feedback@notibrate.com">feedback@notibrate.com</a></p>
       <p>This website uses no cookies and no tracking.</p>
       <p>© 2026 Notibrate.com</p>

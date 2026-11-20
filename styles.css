@@ -56,6 +56,11 @@ h1, h2, h3 {
 h1 { font-size: clamp(1.75rem, 1.3rem + 2vw, 2.5rem); margin-top: 0.5em; }
 h2 { font-size: 1.4rem; }
 h3 { font-size: 1.15rem; }
+h1, h2, h3 { text-wrap: balance; }   /* evens out headings that wrap onto two lines */
+p, li { text-wrap: pretty; }         /* avoids a single word left alone on the last line */
+
+/* The skip link jumps to each page's main heading; it needn't show a focus ring there. */
+h1[tabindex="-1"]:focus { outline: none; }
 
 p, ul, ol { margin: 0 0 1em; }
 li + li { margin-top: 0.35em; }
@@ -161,7 +166,6 @@ a:hover { color: var(--name-blue); }
 /* ---------- Main content ---------- */
 
 main { padding-bottom: 3rem; }
-main:focus { outline: none; }
 
 .intro {
   font-size: 1.15rem;
@@ -169,7 +173,7 @@ main:focus { outline: none; }
   max-width: 42rem;
 }
 
-.readable { max-width: 44rem; } /* keeps long text lines comfortable to read */
+.readable { max-width: 70ch; } /* keeps lines under about 80 letters, comfortable to read */
 
 /* ---------- Home page top section ---------- */
 
@@ -182,6 +186,7 @@ main:focus { outline: none; }
 @media (min-width: 48rem) {
   .hero { grid-template-columns: 1.3fr 1fr; }
 }
+.hero > * { min-width: 0; }  /* lets both columns shrink on narrow screens */
 .hero h1 { margin-top: 0; }
 
 /* ---------- Buttons ---------- */
@@ -191,6 +196,7 @@ main:focus { outline: none; }
   background: var(--blue);
   color: var(--white);
   padding: 0.75rem 1.25rem;
+  border: 2px solid transparent; /* becomes visible in Windows High Contrast mode */
   border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
@@ -209,7 +215,7 @@ main:focus { outline: none; }
 .badge-placeholder {
   display: inline-grid;
   place-items: center;
-  min-width: 10rem;
+  min-width: min(10rem, 100%); /* never wider than a small phone screen */
   min-height: 3.25rem;
   padding: 0.5rem 1rem;
   border: 2px dashed var(--placeholder);
@@ -301,8 +307,8 @@ main:focus { outline: none; }
   content: counter(step);
   display: inline-grid;
   place-items: center;
-  width: 2rem;
-  height: 2rem;
+  min-width: 2em;   /* "min" and "em" so the circle grows with larger text */
+  min-height: 2em;
   margin-right: 0.6rem;
   border-radius: 50%;
   background: var(--blue);
@@ -357,6 +363,18 @@ main:focus { outline: none; }
   margin: 0 0 1rem;
 }
 .footer-links li + li { margin-top: 0; }
+
+/* ---------- Windows High Contrast mode ----------
+   In this mode Windows replaces all the colours above with the user's own.
+   Background colours disappear, so the current page in the menu and the
+   soft blue cards get an outline instead. */
+
+@media (forced-colors: active) {
+  .site-nav a[aria-current="page"] { outline: 2px solid CanvasText; }
+  .card,
+  .contents { border: 1px solid CanvasText; }
+  .steps h2::before { border: 1px solid CanvasText; }
+}
 
 /* ---------- Respect "reduce motion" settings ---------- */
 

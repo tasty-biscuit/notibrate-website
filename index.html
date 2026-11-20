@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Lets text follow the text size chosen in the phone's settings -->
+  <meta name="text-scale" content="scale">
   <title>Notibrate – feel which app is calling</title>
   <meta name="description" content="Notibrate gives each app on your Android phone its own vibration pattern, so you can tell which app is notifying you without looking.">
   <link rel="icon" href="data:,"> <!-- no icon yet: stops the browser asking for one -->
@@ -25,20 +27,20 @@
           <li><a href="/" aria-current="page">Home</a></li>
           <li><a href="/how-to/">How to use</a></li>
           <li><a href="/faq/">FAQ</a></li>
-          <li><a href="/versions/">Versions</a></li>
-          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/versions/">Version history</a></li>
+          <li><a href="/privacy/">Privacy policy</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <!-- ===== PAGE CONTENT – edit the text below ===== -->
-  <main id="main" tabindex="-1">
+  <main>
     <div class="wrap">
 
-      <section class="hero" aria-labelledby="page-title">
+      <section class="hero">
         <div>
-          <h1 id="page-title">Know which app it is, without looking</h1>
+          <h1 id="main" tabindex="-1">Know which app it is, without looking</h1>
           <p class="intro">Notibrate gives each app on your Android phone its own vibration pattern.
             WhatsApp could be three short buzzes and email one long buzz, so you can tell who's
             calling for your attention while your phone stays in your pocket.</p>
@@ -50,21 +52,23 @@
                    <img class="play-badge" src="/images/google-play-badge.png" alt="Get it on Google Play">
                  </a> -->
             <span class="badge-placeholder">Google Play badge<br>coming soon</span>
-            <a class="button" href="/how-to/">See how it works</a>
+            <a class="button" href="/how-to/">How to use Notibrate</a>
           </div>
         </div>
 
         <figure class="screenshot">
           <!-- SCREENSHOT PLACEHOLDER: replace the <div> below with
-               <img src="/images/home-screen.png" alt="Notibrate's home screen, showing apps with their vibration patterns">
-               (describe what the picture shows in the alt text) -->
+               <img src="/images/home-screen.png" alt="Notibrate's home screen, showing apps with their vibration patterns"
+                    width="1080" height="2280" fetchpriority="high">
+               (describe what the picture shows in the alt text, and change width and height
+               to the picture's real size in pixels: right-click the file > Properties > Details) -->
           <div class="shot-placeholder">Screenshot of Notibrate's home screen goes here</div>
           <figcaption>Notibrate's home screen</figcaption>
         </figure>
       </section>
 
       <h2>Why Notibrate?</h2>
-      <ul class="cards">
+      <ul class="cards" role="list">
         <li class="card">
           <h3>A pattern for every app</h3>
           <p>Choose a different vibration for each app you care about, from a short tap to a long buzz.</p>
@@ -76,7 +80,7 @@
         <li class="card">
           <h3>Private by design</h3>
           <p>Notibrate never reads your messages. It has no accounts, no adverts and no tracking.
-            <a href="/privacy/">Read the privacy policy</a>.</p>
+            Read the <a href="/privacy/">privacy policy</a>.</p>
         </li>
       </ul>
 
@@ -91,12 +95,14 @@
   <!-- ===== FOOTER (the same on every page) ===== -->
   <footer class="site-footer">
     <div class="wrap">
-      <ul class="footer-links">
-        <li><a href="/how-to/">How to use</a></li>
-        <li><a href="/faq/">FAQ</a></li>
-        <li><a href="/versions/">Version history</a></li>
-        <li><a href="/privacy/">Privacy policy</a></li>
-      </ul>
+      <nav aria-label="Footer">
+        <ul class="footer-links">
+          <li><a href="/how-to/">How to use</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/versions/">Version history</a></li>
+          <li><a href="/privacy/">Privacy policy</a></li>
+        </ul>
+      </nav>
       <p>Questions, ideas or problems? Email <a href="mailto:feedback@notibrate.com">feedback@notibrate.com</a></p>
       <p>This website uses no cookies and no tracking.</p>
       <p>© 2026 Notibrate.com</p>
