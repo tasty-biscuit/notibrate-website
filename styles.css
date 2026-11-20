@@ -1,0 +1,365 @@
+/* =====================================================================
+   Notibrate website – shared styles for every page
+   ---------------------------------------------------------------------
+   You normally won't need to edit this file. To change a colour, change
+   it once in the ":root" list just below and it updates everywhere.
+   All colour pairs here meet WCAG 2.2 AA contrast (at least 4.5:1).
+   No web fonts are loaded: the site uses the phone/computer's own fonts,
+   so nothing is requested from Google or any other company.
+   ===================================================================== */
+
+:root {
+  --blue: #0066CC;        /* main blue: buttons, links (white text on it) */
+  --name-blue: #213F80;   /* dark blue: the "Notibrate" name, headings */
+  --card: #D6E4FF;        /* soft blue card background */
+  --card-text: #001B3D;   /* text on soft blue cards */
+  --text: #1A1A1A;        /* normal body text */
+  --muted: #4A4A4A;       /* quieter text (still 8:1 on white) */
+  --white: #FFFFFF;
+  --line: #B8C7E0;        /* thin borders */
+  --placeholder: #5A6B85; /* dashed placeholder boxes (4.9:1 on white) */
+  --radius: 12px;
+  --max: 64rem;           /* widest the page content gets */
+}
+
+/* ---------- Basics ---------- */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  /* Lets text grow with the user's own text-size setting (200% and more). */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  /* Lets long words such as the email address wrap onto the next line
+     instead of running off the side of a phone screen at large text sizes. */
+  overflow-wrap: anywhere;
+}
+
+img { max-width: 100%; height: auto; }
+
+h1, h2, h3 {
+  color: var(--name-blue);
+  line-height: 1.25;
+  margin: 1.6em 0 0.5em;
+}
+h1 { font-size: clamp(1.75rem, 1.3rem + 2vw, 2.5rem); margin-top: 0.5em; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.15rem; }
+
+p, ul, ol { margin: 0 0 1em; }
+li + li { margin-top: 0.35em; }
+
+a { color: var(--blue); text-underline-offset: 0.15em; }
+a:hover { color: var(--name-blue); }
+
+/* Clear keyboard focus ring on everything you can tab to. */
+:focus-visible {
+  outline: 3px solid var(--name-blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- "Skip to main content" link (for keyboard users) ---------- */
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -10rem;
+  background: var(--blue);
+  color: var(--white);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  z-index: 10;
+}
+.skip-link:focus { top: 1rem; color: var(--white); }
+
+/* ---------- Page width ---------- */
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ---------- Header and menu ---------- */
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--white);
+}
+.site-header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--name-blue);
+  font-weight: 700;
+  font-size: 1.35rem;
+  text-decoration: none;
+}
+.brand:hover { color: var(--name-blue); }
+
+/* LOGO PLACEHOLDER – remove this block's use once the real logo is ready */
+.logo-placeholder {
+  display: inline-grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 2px dashed var(--placeholder);
+  border-radius: 10px;
+  color: var(--placeholder);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.logo { width: 2.5rem; height: 2.5rem; }
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-nav li + li { margin-top: 0; }
+.site-nav a {
+  display: block;
+  padding: 0.45rem 0.7rem;
+  border-radius: 8px;
+  color: var(--name-blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+.site-nav a:hover { background: var(--card); color: var(--card-text); }
+.site-nav a[aria-current="page"] {
+  background: var(--blue);
+  color: var(--white);
+}
+
+/* ---------- Main content ---------- */
+
+main { padding-bottom: 3rem; }
+main:focus { outline: none; }
+
+.intro {
+  font-size: 1.15rem;
+  color: var(--muted);
+  max-width: 42rem;
+}
+
+.readable { max-width: 44rem; } /* keeps long text lines comfortable to read */
+
+/* ---------- Home page top section ---------- */
+
+.hero {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem 0 1rem;
+}
+@media (min-width: 48rem) {
+  .hero { grid-template-columns: 1.3fr 1fr; }
+}
+.hero h1 { margin-top: 0; }
+
+/* ---------- Buttons ---------- */
+
+.button {
+  display: inline-block;
+  background: var(--blue);
+  color: var(--white);
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.button:hover { background: var(--name-blue); color: var(--white); }
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* GOOGLE PLAY BADGE PLACEHOLDER */
+.badge-placeholder {
+  display: inline-grid;
+  place-items: center;
+  min-width: 10rem;
+  min-height: 3.25rem;
+  padding: 0.5rem 1rem;
+  border: 2px dashed var(--placeholder);
+  border-radius: 10px;
+  color: var(--placeholder);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+.play-badge { height: 3.5rem; width: auto; }
+
+/* ---------- Screenshots ---------- */
+
+.screenshot {
+  margin: 0 auto;
+  max-width: 17rem;
+  width: 100%;
+}
+.screenshot img {
+  display: block;
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+}
+.screenshot figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* SCREENSHOT PLACEHOLDER – a phone-shaped dashed box */
+.shot-placeholder {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 9 / 19;
+  width: 100%;
+  border: 2px dashed var(--placeholder);
+  border-radius: 18px;
+  color: var(--placeholder);
+  font-weight: 600;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* ---------- Soft blue cards ---------- */
+
+.cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  margin: 1.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+.cards li + li { margin-top: 0; }
+.card {
+  background: var(--card);
+  color: var(--card-text);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.25rem 0.5rem;
+}
+.card h2,
+.card h3 { color: var(--card-text); margin-top: 0; }
+.card a { color: var(--card-text); }
+
+/* ---------- How-to steps ---------- */
+
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  counter-reset: step;
+}
+.steps > li {
+  counter-increment: step;
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+}
+.steps > li + li { margin-top: 0; }
+@media (min-width: 48rem) {
+  .steps > li { grid-template-columns: 1.4fr 1fr; }
+}
+.steps h2 { margin-top: 0; }
+.steps h2::before {
+  content: counter(step);
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.6rem;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 1rem;
+  vertical-align: 0.1em;
+}
+
+/* ---------- FAQ ---------- */
+
+.contents {
+  background: var(--card);
+  color: var(--card-text);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0 2rem;
+}
+.contents h2 { color: var(--card-text); margin-top: 0; font-size: 1.15rem; }
+.contents a { color: var(--card-text); }
+.contents ol { margin-bottom: 0; }
+
+.faq h2 { scroll-margin-top: 1rem; }
+
+/* ---------- Version history ---------- */
+
+.version {
+  border-left: 4px solid var(--blue);
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  margin: 1.75rem 0;
+}
+.version h2 { margin-top: 0; }
+.version .date { color: var(--muted); margin-top: -0.25rem; }
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background: var(--name-blue);
+  color: var(--white);
+  padding: 2rem 0;
+  font-size: 0.98rem;
+}
+.site-footer a { color: var(--white); }
+.site-footer a:hover { color: var(--card); }
+.site-footer :focus-visible { outline-color: var(--white); }
+.site-footer p { margin: 0 0 0.5rem; }
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+.footer-links li + li { margin-top: 0; }
+
+/* ---------- Respect "reduce motion" settings ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}

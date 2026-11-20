@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ – Notibrate</title>
+  <meta name="description" content="Answers to common questions about Notibrate, the Android app that gives each app its own vibration pattern.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ===== HEADER (the same on every page) ===== -->
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <!-- LOGO PLACEHOLDER: see the note in /index.html -->
+        <span class="logo-placeholder" aria-hidden="true">Logo</span>
+        Notibrate
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/how-to/">How to use</a></li>
+          <li><a href="/faq/" aria-current="page">FAQ</a></li>
+          <li><a href="/versions/">Versions</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== PAGE CONTENT – edit the text below =====
+       This page's address must stay notibrate.com/faq (the app links to it).
+       To add a question: copy one <section> ... </section> block, change the
+       id="..." (short, no spaces), and add a matching line to the list at the top. -->
+  <main id="main" tabindex="-1">
+    <div class="wrap readable faq">
+      <h1>Frequently asked questions</h1>
+
+      <nav class="contents" aria-labelledby="contents-title">
+        <h2 id="contents-title">Questions on this page</h2>
+        <ol>
+          <li><a href="#what-is-notibrate">What is Notibrate?</a></li>
+          <li><a href="#double-buzz">Why do I feel a double buzz, or an uneven pattern?</a></li>
+          <li><a href="#silent">Why doesn't Notibrate vibrate when my phone is on Silent?</a></li>
+          <li><a href="#do-not-disturb">Why don't I feel patterns in Do Not Disturb?</a></li>
+          <li><a href="#stopped-working">Why did Notibrate stop working?</a></li>
+          <li><a href="#one-pattern">Why do I only feel one pattern when several messages arrive at once?</a></li>
+          <li><a href="#read-messages">Does Notibrate read my messages?</a></li>
+          <li><a href="#tablet">Why doesn't Notibrate vibrate on my tablet?</a></li>
+          <li><a href="#remove-pattern">How do I remove a pattern from an app?</a></li>
+          <li><a href="#contact">Contact us</a></li>
+        </ol>
+      </nav>
+
+      <section aria-labelledby="what-is-notibrate">
+        <h2 id="what-is-notibrate">What is Notibrate?</h2>
+        <p>Notibrate gives each app on your phone its own vibration pattern, so you can tell which app
+          is notifying you without looking. For example, WhatsApp could be three short buzzes and email
+          one long buzz.</p>
+      </section>
+
+      <section aria-labelledby="double-buzz">
+        <h2 id="double-buzz">Why do I feel a double buzz, or an uneven pattern?</h2>
+        <p>The app you chose still has its own vibration switched on, so you feel the app's buzz and
+          Notibrate's pattern at the same time. Open the app's notification settings and switch its
+          vibration off. Notibrate shows you how when you set up a pattern, and you can open the settings
+          again from Notibrate at any time.</p>
+        <p>If your phone is in <strong>Vibrate</strong> mode, Android also turns an app's notification
+          <em>sound</em> into an extra buzz, even when that app's vibration is off. To stop this, set the
+          app's notification sound to Silent as well. Notibrate reminds you about this when your phone
+          switches to Vibrate mode.</p>
+      </section>
+
+      <section aria-labelledby="silent">
+        <h2 id="silent">Why doesn't Notibrate vibrate when my phone is on Silent?</h2>
+        <p>Silent means no sounds and no vibrations, so Notibrate stays quiet too. If you'd like to feel
+          notifications from certain people or apps while everything else is quiet, use your phone's
+          <strong>Do Not Disturb</strong> mode instead and add them as exceptions: Notibrate vibrates for
+          anything Do Not Disturb lets through.</p>
+      </section>
+
+      <section aria-labelledby="do-not-disturb">
+        <h2 id="do-not-disturb">Why don't I feel patterns in Do Not Disturb?</h2>
+        <p>Notibrate follows your Do Not Disturb settings: it only vibrates for notifications that Do Not
+          Disturb lets through (for example your favourite contacts or the apps you've allowed).</p>
+        <p>Some phones go further and block <strong>every</strong> vibration while Do Not Disturb is on,
+          even for the apps you've allowed. Notibrate can't override this. If you don't feel any patterns
+          in Do Not Disturb even for allowed apps, your phone is one of these.</p>
+      </section>
+
+      <section aria-labelledby="stopped-working">
+        <h2 id="stopped-working">Why did Notibrate stop working?</h2>
+        <p>Usually it's battery saving. To save power, some phones put apps to sleep when they haven't
+          been opened for a while, and a sleeping Notibrate can't notice notifications. To fix it:</p>
+        <ol>
+          <li>In Notibrate, go to <strong>Settings › Keep Notibrate running</strong>. This opens
+            Notibrate's app info page.</li>
+          <li>Tap <strong>Battery</strong> and choose <strong>Unrestricted</strong> (the names vary
+            between phones).</li>
+          <li>On Samsung phones, also check that Notibrate isn't listed under <strong>Settings › Battery ›
+            Background usage limits › Sleeping apps</strong>.</li>
+        </ol>
+        <p>If Notibrate's home screen shows "Notibrate isn't receiving notifications", switch Notibrate's
+          notification access off and on again using the button on that message.</p>
+      </section>
+
+      <section aria-labelledby="one-pattern">
+        <h2 id="one-pattern">Why do I only feel one pattern when several messages arrive at once?</h2>
+        <p>When several notifications arrive from the same app together, Notibrate plays that app's
+          pattern once, so the patterns don't run into each other. If notifications from different apps
+          arrive together, Notibrate plays them one after the other, with a short pause in between. With
+          <strong>Cooldown</strong> on (Settings), Notibrate also vibrates at most once every 3 seconds for
+          each app.</p>
+      </section>
+
+      <section aria-labelledby="read-messages">
+        <h2 id="read-messages">Does Notibrate read my messages?</h2>
+        <p>No. Notibrate only sees which app sent a notification. It never reads, stores or shares what a
+          notification says. Android shows a standard warning when you give any app notification access;
+          that warning is the same for every app and can be safely ignored for Notibrate.</p>
+      </section>
+
+      <section aria-labelledby="tablet">
+        <h2 id="tablet">Why doesn't Notibrate vibrate on my tablet?</h2>
+        <p>Notibrate needs a vibration motor, and many tablets don't have one. Notibrate tells you when it
+          starts if your device can't vibrate.</p>
+      </section>
+
+      <section aria-labelledby="remove-pattern">
+        <h2 id="remove-pattern">How do I remove a pattern from an app?</h2>
+        <p>On Notibrate's home screen, tap <strong>Reset individual apps</strong>, tick the app and tap the
+          tick. Notibrate then reminds you how to switch the app's own vibration (and sound) back on if
+          you'd like it back.</p>
+      </section>
+
+      <section aria-labelledby="contact">
+        <h2 id="contact">Contact us</h2>
+        <p>Questions, ideas or problems? Email
+          <a href="mailto:feedback@notibrate.com">feedback@notibrate.com</a>, or use
+          <strong>Settings › Contact / Feedback</strong> in the app.</p>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER (the same on every page) ===== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <ul class="footer-links">
+        <li><a href="/how-to/">How to use</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/versions/">Version history</a></li>
+        <li><a href="/privacy/">Privacy policy</a></li>
+      </ul>
+      <p>Questions, ideas or problems? Email <a href="mailto:feedback@notibrate.com">feedback@notibrate.com</a></p>
+      <p>This website uses no cookies and no tracking.</p>
+      <p>© 2026 Notibrate.com</p>
+    </div>
+  </footer>
+</body>
+</html>
