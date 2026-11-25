@@ -32,6 +32,9 @@
   --footer-text: #FFFFFF;
   --footer-hover: #D6E4FF;
   --focus: #213F80;       /* keyboard focus ring */
+  --faq-row: #F0F0F0;     /* FAQ question rows */
+  --faq-row-hover: #E6E6E6;
+  --faq-border: #E0E0E0;
 
   --radius: 12px;
   --max: 64rem;           /* widest the page content gets */
@@ -57,6 +60,9 @@
     --footer-text: #FFFFFF;
     --footer-hover: #A9C7FF;
     --focus: #A9C7FF;
+    --faq-row: #1A2740;
+    --faq-row-hover: #22314F;
+    --faq-border: #2C3D5E;
   }
 }
 
@@ -357,18 +363,74 @@ main { padding-bottom: 3rem; }
 
 /* ---------- FAQ ---------- */
 
-.contents {
-  background: var(--card);
-  color: var(--card-text);
-  border-radius: var(--radius);
-  padding: 1rem 1.25rem;
-  margin: 1.5rem 0 2rem;
-}
-.contents h2 { color: var(--card-text); margin-top: 0; font-size: 1.15rem; }
-.contents a { color: var(--card-text); }
-.contents ol { margin-bottom: 0; }
+/* Each question is a rounded row; tapping it shows the answer underneath,
+   inside the same row. Uses the browser's own <details> element, so it works
+   with a keyboard and screen readers without any extra code. */
 
-.faq h2 { scroll-margin-top: 1rem; }
+.faq-list {
+  display: grid;
+  gap: 1rem;
+  margin: 2rem 0 2.5rem;
+}
+
+.faq-item {
+  background: var(--faq-row);
+  border: 1px solid var(--faq-border);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.06);
+  scroll-margin-top: 1rem;
+}
+
+.faq-item summary {
+  list-style: none;             /* removes the browser's own triangle */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 4rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+.faq-item summary::-webkit-details-marker { display: none; } /* older Safari */
+@media (hover: hover) {
+  .faq-item summary:hover { background: var(--faq-row-hover); }
+}
+.faq-item[open] summary { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+
+/* The + sign; its upright line turns flat to make a − when the answer is open */
+.faq-icon {
+  flex-shrink: 0;
+  width: 1.4em;
+  height: 1.4em;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+}
+.faq-icon-v {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.faq-item[open] .faq-icon-v { transform: rotate(90deg); }
+
+/* The answer */
+.faq-item > :not(summary) { margin-left: 1.25rem; margin-right: 1.25rem; }
+.faq-item > summary + * { margin-top: 0.25rem; }
+.faq-item > :last-child { margin-bottom: 1.25rem; }
+
+/* Gentle open/close movement, only for people who haven't asked for less motion */
+@media (prefers-reduced-motion: no-preference) {
+  .faq-icon-v { transition: transform 0.2s; }
+  .faq-item::details-content {
+    interpolate-size: allow-keywords;
+    overflow: clip;
+    contain: layout;
+    transition: block-size 0.25s ease-in-out, content-visibility 0.25s;
+    transition-behavior: allow-discrete;
+  }
+  .faq-item:not([open])::details-content { block-size: 0; }
+}
 
 /* ---------- Version history ---------- */
 
@@ -409,8 +471,8 @@ main { padding-bottom: 3rem; }
 
 @media (forced-colors: active) {
   .site-nav a[aria-current="page"] { outline: 2px solid CanvasText; }
-  .card,
-  .contents { border: 1px solid CanvasText; }
+  .card { border: 1px solid CanvasText; }
+  .faq-item { border-color: CanvasText; }
   .steps h2::before { border: 1px solid CanvasText; }
 }
 
