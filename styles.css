@@ -168,21 +168,13 @@ a:hover { color: var(--link-hover); }
 }
 .brand:hover { color: var(--heading); }
 
-/* LOGO PLACEHOLDER – remove this block's use once the real logo is ready */
-.logo-placeholder {
-  display: inline-grid;
-  place-items: center;
+/* The app icon next to the "Notibrate" name, with rounded corners like on a phone */
+.logo {
   width: 2.5rem;
   height: 2.5rem;
-  border: 2px dashed var(--placeholder);
-  border-radius: 10px;
-  color: var(--placeholder);
-  font-size: 0.65rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  border-radius: 22%;
+  flex-shrink: 0;
 }
-.logo { width: 2.5rem; height: 2.5rem; }
 
 .site-nav ul {
   display: flex;
@@ -291,7 +283,15 @@ main { padding-bottom: 3rem; }
   text-align: center;
 }
 
-/* SCREENSHOT PLACEHOLDER – a phone-shaped dashed box */
+/* Home page phone picture (square, see-through background) */
+.hero-image {
+  margin: 0 auto;
+  max-width: 26rem;
+  width: 100%;
+}
+.hero-image img { display: block; width: 100%; height: auto; }
+
+/* SCREENSHOT PLACEHOLDER – a phone-shaped dashed box ("square" for the Home picture) */
 .shot-placeholder {
   display: grid;
   place-items: center;
@@ -304,6 +304,7 @@ main { padding-bottom: 3rem; }
   text-align: center;
   padding: 1rem;
 }
+.shot-placeholder.square { aspect-ratio: 1; }
 
 /* ---------- Soft blue cards ---------- */
 

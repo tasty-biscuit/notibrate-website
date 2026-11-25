@@ -9,7 +9,7 @@
   <meta name="color-scheme" content="light dark">
   <title>Notibrate – feel your app notifications</title>
   <meta name="description" content="Notibrate allows each app on your Android phone to have its own vibration pattern, so you can tell which app is notifying you without looking.">
-  <link rel="icon" href="data:,"> <!-- no icon yet: stops the browser asking for one -->
+  <link rel="icon" href="/images/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
   <!-- VISIT COUNTER (GoatCounter): counts visits anonymously, with no cookies.
        "notibrate" is the code chosen when signing up at goatcounter.com.
@@ -23,9 +23,8 @@
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="/">
-        <!-- LOGO PLACEHOLDER: when the logo is ready, replace the next line with
-             <img class="logo" src="/images/logo.svg" alt=""> -->
-        <span class="logo-placeholder" aria-hidden="true">Logo</span>
+        <!-- LOGO: the picture file is /images/logo.svg -->
+        <img class="logo" src="/images/logo.svg" alt="" width="40" height="40">
         Notibrate
       </a>
       <nav class="site-nav" aria-label="Main">
@@ -60,15 +59,16 @@
           </div>
         </div>
 
-        <figure class="screenshot">
-          <!-- SCREENSHOT PLACEHOLDER: replace the <div> below with
-               <img src="/images/home-screen.png" alt="Notibrate's home screen, showing apps with their vibration patterns"
-                    width="1080" height="2280" fetchpriority="high">
-               (describe what the picture shows in the alt text, and change width and height
-               to the picture's real size in pixels: right-click the file > Properties > Details) -->
-          <div class="shot-placeholder">Screenshot of Notibrate's home screen goes here</div>
-          <figcaption>Notibrate's home screen</figcaption>
-        </figure>
+        <div class="hero-image">
+          <!-- PHONE PICTURE PLACEHOLDER: a square picture of a phone showing Notibrate's home
+               screen, with a see-through (transparent) background, saved as .webp or .png.
+               Put it in the images folder, then replace the <div> line below with:
+               <img src="/images/hero-phone.webp" alt="A phone showing Notibrate's home screen"
+                    width="1000" height="1000" fetchpriority="high">
+               Change the file name to match yours, and width and height to the picture's
+               real size in pixels (right-click the file > Properties > Details). -->
+          <div class="shot-placeholder square">Phone picture goes here</div>
+        </div>
       </section>
 
       <h2>Why Notibrate?</h2>

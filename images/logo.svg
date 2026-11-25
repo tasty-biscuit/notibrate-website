@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<defs>
+<filter id="pd-text-blur" x="-25%" y="-120%" width="150%" height="340%"><feGaussianBlur stdDeviation="5.5"></feGaussianBlur></filter>
+<filter id="pd-icon-blur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3.5"></feGaussianBlur></filter>
+</defs>
+<rect width="512" height="512" fill="#DCE1E7"></rect>
+<g transform="translate(200 385) rotate(30)">
+<g fill="none" stroke="#2384D4" stroke-width="5">
+<g transform="translate(22 -6) rotate(4)" stroke-opacity="0.32"><rect x="-170" y="-280" width="340" height="680" rx="52"></rect></g>
+<g transform="translate(-22 6) rotate(-4)" stroke-opacity="0.32"><rect x="-170" y="-280" width="340" height="680" rx="52"></rect></g>
+<g transform="translate(10 -3) rotate(2)" stroke-opacity="0.6"><rect x="-170" y="-280" width="340" height="680" rx="52"></rect></g>
+<g transform="translate(-10 3) rotate(-2)" stroke-opacity="0.6"><rect x="-170" y="-280" width="340" height="680" rx="52"></rect></g>
+</g>
+<rect x="-170" y="-280" width="340" height="680" rx="52" fill="#20262E"></rect>
+<rect x="-154" y="-264" width="308" height="648" rx="38" fill="#39B0EA"></rect>
+<g filter="url(#pd-icon-blur)">
+<rect x="-118" y="-120" width="64" height="64" rx="16" fill="#FF8A4C"></rect>
+<circle cx="-86" cy="-88" r="16" fill="#FFFFFF"></circle>
+<rect x="-32" y="-120" width="64" height="64" rx="16" fill="#7C5CFF"></rect>
+<rect x="-14" y="-102" width="28" height="28" rx="4" fill="#FFFFFF"></rect>
+<rect x="54" y="-120" width="64" height="64" rx="16" fill="#2ECC71"></rect>
+<path d="M 86 -106 L 102 -76 L 70 -76 Z" fill="#FFFFFF"></path>
+<rect x="-118" y="-34" width="64" height="64" rx="16" fill="#FFFFFF"></rect>
+<rect x="-104" y="-6" width="36" height="8" rx="4" fill="#FF5A7A"></rect>
+<rect x="-32" y="-34" width="64" height="64" rx="16" fill="#FFC845"></rect>
+<circle cx="0" cy="-2" r="18" fill="none" stroke="#0F2A44" stroke-width="6"></circle>
+<rect x="54" y="-34" width="64" height="64" rx="16" fill="#0F2A44"></rect>
+<path d="M 72 -2 L 86 -14 L 86 10 Z M 88 -12 L 102 -2 L 88 8 Z" fill="#39B0EA"></path>
+<rect x="-118" y="52" width="64" height="64" rx="16" fill="#FF5A7A"></rect>
+<circle cx="-86" cy="84" r="10" fill="#FFFFFF"></circle>
+<rect x="-32" y="52" width="64" height="64" rx="16" fill="#1D2330"></rect>
+<rect x="-16" y="70" width="32" height="28" rx="6" fill="#FFC845"></rect>
+<rect x="54" y="52" width="64" height="64" rx="16" fill="#FFFFFF"></rect>
+<path d="M 72 98 L 86 68 L 100 98 Z" fill="#2ECC71"></path>
+</g>
+<rect x="-140" y="-250" width="280" height="100" rx="22" fill="#FFFFFF"></rect>
+<circle cx="-100" cy="-200" r="22" fill="#1F7FD0"></circle>
+<text x="-62" y="-205" font-family="Arial, Helvetica, DejaVu Sans, sans-serif" font-weight="700" font-size="22" fill="#000000" filter="url(#pd-text-blur)">Incoming buzz</text>
+<rect x="-62" y="-188" width="28" height="18" rx="9" fill="#1F7FD0"></rect>
+<rect x="-24" y="-188" width="28" height="18" rx="9" fill="#1F7FD0"></rect>
+<rect x="14" y="-188" width="92" height="18" rx="9" fill="#1F7FD0"></rect>
+</g>
+</svg>
