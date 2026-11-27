@@ -283,6 +283,110 @@ main { padding-bottom: 3rem; }
   text-align: center;
 }
 
+/* How-to: a row of pictures that walk through one step (2 across on phones, 4 on wider screens) */
+.steps > li.step-wide { grid-template-columns: 1fr; }
+.shots-hint { color: var(--muted); }
+/* "Tap" for touch screens, "Click" when the main pointer is a mouse or trackpad.
+   Hidden words are hidden from screen readers too, so only one is ever read out. */
+.say-click { display: none; }
+@media (hover: hover) and (pointer: fine) {
+  .say-tap { display: none; }
+  .say-click { display: inline; }
+}
+.shots {
+  display: grid;
+  /* small pictures, 7.5rem wide: as many fit on a line as there's room for.
+     If this width changes, change sizes="..." on the How-to pictures too. */
+  grid-template-columns: repeat(auto-fill, min(7.5rem, 100%));
+  gap: 1.25rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.shots li + li { margin-top: 0; }
+.shots figure { margin: 0; }
+.shots img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 13.5% / 6%;   /* follows the phone's rounded corners */
+}
+.shots figcaption { margin-top: 0.5rem; font-size: 0.9rem; line-height: 1.35; }
+.zoom { display: block; border-radius: 13.5% / 6%; cursor: zoom-in; }
+.zoom:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+/* Picture viewer (opens when a How-to picture is tapped) */
+.viewer {
+  padding: 1rem;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  max-width: calc(100vw - 2rem);
+  max-height: calc(100dvh - 2rem);
+}
+.viewer:modal { overscroll-behavior: contain; }
+/* The page behind the viewer: darkened and blurred so the picture stands out */
+.viewer::backdrop {
+  background: rgb(0 0 0 / 0.75);
+  backdrop-filter: blur(6px);
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
+/* People who've asked their device for less see-through effects get a plain, darker cover */
+@media (prefers-reduced-transparency: reduce) {
+  .viewer::backdrop { background: rgb(0 0 0 / 0.92); backdrop-filter: none; }
+}
+.viewer img {
+  display: block;
+  width: min(36vh, 88vw - 1rem);  /* if this changes, change "sizes" in the How-to page's script too */
+  height: auto;
+  margin: 0 auto;
+  border-radius: 13.5% / 6%;
+}
+.viewer-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  width: min(36vh, 88vw - 1rem);  /* same width as the picture */
+  margin-inline: auto;
+}
+.viewer-text { flex: 1 1 8rem; min-width: 0; overflow-wrap: anywhere; }
+.viewer-count { margin: 0 0 0.15rem; font-size: 0.85rem; color: var(--muted); }
+.viewer-title { font-size: 1rem; font-weight: 400; margin: 0; color: var(--text); }
+
+/* Previous / next arrows, half over the picture's left and right edges */
+.viewer { padding-inline: min(1.75rem, 6vw); max-width: calc(100vw - 1rem); }
+.viewer-stage { position: relative; width: fit-content; margin: 0 auto; }
+.viewer-arrow {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: min(2.75rem, 12vw);   /* a little smaller on very narrow screens */
+  height: min(2.75rem, 12vw);
+  padding: 0;
+  border: 2px solid var(--on-blue);
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--on-blue);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.3);
+}
+.viewer-arrow svg { width: 60%; height: 60%; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.viewer-prev { left: 0; transform: translate(-50%, -50%); }
+.viewer-next { right: 0; transform: translate(50%, -50%); }
+.viewer-arrow:disabled { opacity: 0.35; cursor: default; box-shadow: none; }
+.viewer-arrow[hidden], .viewer-count[hidden] { display: none; }
+.viewer-arrow:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+@media (hover: hover) {
+  .viewer-arrow:not(:disabled):hover { background: var(--blue-hover); }
+}
+.viewer form { margin: 0; }
+
 /* Home page phone picture (square, see-through background) */
 .hero-image {
   margin: 0 auto;
@@ -486,6 +590,9 @@ main { padding-bottom: 3rem; }
   .site-nav a[aria-current="page"] { outline: 2px solid CanvasText; }
   .card { border: 1px solid CanvasText; }
   .faq-item { border-color: CanvasText; }
+  .viewer { border: 2px solid CanvasText; }
+  .viewer-arrow { border-color: ButtonText; }
+  .viewer-arrow:disabled { border-color: GrayText; color: GrayText; opacity: 1; }
   .steps h2::before { border: 1px solid CanvasText; }
 }
 
