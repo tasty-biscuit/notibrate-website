@@ -330,6 +330,11 @@ main { padding-bottom: 3rem; }
   border-radius: var(--radius);
   padding: 1.25rem 1.25rem 0.5rem;
 }
+/* spans every column, e.g. the "Accessible" box, with its title on the same line as the text */
+.card-wide { grid-column: 1 / -1; padding: 1.25rem; }
+.card-wide h3,
+.card-wide p { display: inline; margin: 0; }
+.card-wide h3 { font-size: inherit; }
 .card h2,
 .card h3 { color: var(--card-text); margin-top: 0; }
 .card a { color: var(--card-text); }
