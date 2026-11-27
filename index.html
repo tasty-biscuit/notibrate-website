@@ -60,14 +60,30 @@
         </div>
 
         <div class="hero-image">
-          <!-- PHONE PICTURE PLACEHOLDER: a square picture of a phone showing Notibrate's home
-               screen, with a see-through (transparent) background, saved as .webp or .png.
-               Put it in the images folder, then replace the <div> line below with:
-               <img src="/images/hero-phone.webp" alt="A phone showing Notibrate's home screen"
-                    width="1000" height="1000" fetchpriority="high">
-               Change the file name to match yours, and width and height to the picture's
-               real size in pixels (right-click the file > Properties > Details). -->
-          <div class="shot-placeholder square">Phone picture goes here</div>
+          <!-- PHONE PICTURE: a light-mode and a dark-mode version, each saved in several sizes
+               (416 to 1248 pixels wide) to match common screen scalings, so the browser hardly
+               has to resize them and the edges stay smooth:
+                 light mode: hero-phone-416.webp ... hero-phone-1248.webp
+                 dark mode:  hero-phone-dark-416.webp ... hero-phone-dark-1248.webp
+               hero-phone.webp and hero-phone-dark.webp are the full-size masters they were made
+               from. If the pictures ever change, ask Claude to make the sizes again. -->
+          <picture>
+            <source media="(prefers-color-scheme: dark)"
+                    srcset="/images/hero-phone-dark-416.webp 416w, /images/hero-phone-dark-520.webp 520w,
+                            /images/hero-phone-dark-624.webp 624w, /images/hero-phone-dark-728.webp 728w,
+                            /images/hero-phone-dark-832.webp 832w, /images/hero-phone-dark-1040.webp 1040w,
+                            /images/hero-phone-dark-1248.webp 1248w"
+                    sizes="(min-width: 48rem) 26rem, min(26rem, 100vw - 2rem)"
+                    width="1663" height="1862">
+            <img src="/images/hero-phone-416.webp"
+                 srcset="/images/hero-phone-416.webp 416w, /images/hero-phone-520.webp 520w,
+                         /images/hero-phone-624.webp 624w, /images/hero-phone-728.webp 728w,
+                         /images/hero-phone-832.webp 832w, /images/hero-phone-1040.webp 1040w,
+                         /images/hero-phone-1248.webp 1248w"
+                 sizes="(min-width: 48rem) 26rem, min(26rem, 100vw - 2rem)"
+                 alt="A phone showing Notibrate's home screen, with buttons to choose an app and choose a vibration pattern"
+                 width="1663" height="1862" fetchpriority="high">
+          </picture>
         </div>
       </section>
 

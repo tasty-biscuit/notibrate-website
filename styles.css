@@ -289,7 +289,14 @@ main { padding-bottom: 3rem; }
   max-width: 26rem;
   width: 100%;
 }
-.hero-image img { display: block; width: 100%; height: auto; }
+.hero-image picture { display: block; }
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* soft shadow that follows the phone's outline, so its silver edge stands out on a white page */
+  filter: drop-shadow(0 12px 24px rgb(0 27 61 / 0.18));
+}
 
 /* SCREENSHOT PLACEHOLDER – a phone-shaped dashed box ("square" for the Home picture) */
 .shot-placeholder {
