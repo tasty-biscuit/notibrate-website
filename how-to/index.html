@@ -117,38 +117,110 @@
           </ol>
         </li>
 
-        <!-- STEP 2 -->
-        <li>
+        <!-- STEP 2 (text on top, then a row of pictures; pictures 3a+3b and 4a+4b are grouped as pairs)
+             Each picture: figcaption = the short label everyone sees, alt="..." = the description
+             read out by screen readers. If a picture changes, ask Claude to make the sizes again. -->
+        <li class="step-wide">
           <div>
             <h2>Choose an app and vibration pattern</h2>
             <p>Pick an app from the list of apps on your phone, then choose the vibration pattern you'd
               like for it. Try a few: you'll soon learn to recognise each one.</p>
+            <!-- Shows "Tap" on phones and tablets, "Click" on computers with a mouse or trackpad -->
+            <p class="shots-hint"><span class="say-tap">Tap</span><span class="say-click">Click</span> any picture to see it larger.</p>
           </div>
-          <figure class="screenshot">
-            <!-- SCREENSHOT PLACEHOLDER: replace the <div> with
-                 <img src="/images/how-to-2.png" alt="describe the screenshot here"
-                      width="1080" height="2280" loading="lazy"> -->
-            <div class="shot-placeholder">Screenshot: choosing a pattern</div>
-            <figcaption>Choosing a pattern for an app</figcaption>
-          </figure>
+          <ol class="shots" role="list">
+            <li>
+              <figure>
+                <a class="zoom" href="/images/how-to/pattern-1.webp">
+                  <img src="/images/how-to/pattern-1-240.webp"
+                       srcset="/images/how-to/pattern-1-120.webp 120w, /images/how-to/pattern-1-150.webp 150w, /images/how-to/pattern-1-180.webp 180w, /images/how-to/pattern-1-210.webp 210w, /images/how-to/pattern-1-240.webp 240w, /images/how-to/pattern-1-300.webp 300w, /images/how-to/pattern-1-360.webp 360w, /images/how-to/pattern-1-420.webp 420w, /images/how-to/pattern-1-480.webp 480w, /images/how-to/pattern-1-600.webp 600w, /images/how-to/pattern-1-720.webp 720w, /images/how-to/pattern-1-960.webp 960w, /images/how-to/pattern-1.webp 1280w"
+                       sizes="min(7.5rem, 100vw - 2rem)"
+                       alt="Notibrate's home screen, with Choose an app and Choose a vibration pattern buttons, and Reset individual apps and Reset all apps buttons at the bottom."
+                       width="1280" height="2856" loading="lazy">
+                </a>
+                <figcaption>1. Tap <strong>Choose an app</strong></figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <a class="zoom" href="/images/how-to/pattern-2.webp">
+                  <img src="/images/how-to/pattern-2-240.webp"
+                       srcset="/images/how-to/pattern-2-120.webp 120w, /images/how-to/pattern-2-150.webp 150w, /images/how-to/pattern-2-180.webp 180w, /images/how-to/pattern-2-210.webp 210w, /images/how-to/pattern-2-240.webp 240w, /images/how-to/pattern-2-300.webp 300w, /images/how-to/pattern-2-360.webp 360w, /images/how-to/pattern-2-420.webp 420w, /images/how-to/pattern-2-480.webp 480w, /images/how-to/pattern-2-600.webp 600w, /images/how-to/pattern-2-720.webp 720w, /images/how-to/pattern-2-960.webp 960w, /images/how-to/pattern-2.webp 1280w"
+                       sizes="min(7.5rem, 100vw - 2rem)"
+                       alt="The Select app(s) screen. The Search apps box is highlighted, Gmail is ticked and highlighted in the list of apps, a bar says 1 selected, and there is a green tick at the top right."
+                       width="1280" height="2856" loading="lazy">
+                </a>
+                <figcaption>2. Tick the app (or search for it), then tap the green tick</figcaption>
+              </figure>
+            </li>
+            <li class="shot-pair">
+              <figure>
+                <a class="zoom" href="/images/how-to/pattern-3a.webp">
+                  <img src="/images/how-to/pattern-3a-240.webp"
+                       srcset="/images/how-to/pattern-3a-120.webp 120w, /images/how-to/pattern-3a-150.webp 150w, /images/how-to/pattern-3a-180.webp 180w, /images/how-to/pattern-3a-210.webp 210w, /images/how-to/pattern-3a-240.webp 240w, /images/how-to/pattern-3a-300.webp 300w, /images/how-to/pattern-3a-360.webp 360w, /images/how-to/pattern-3a-420.webp 420w, /images/how-to/pattern-3a-480.webp 480w, /images/how-to/pattern-3a-600.webp 600w, /images/how-to/pattern-3a-720.webp 720w, /images/how-to/pattern-3a-960.webp 960w, /images/how-to/pattern-3a.webp 1280w"
+                       sizes="min(7.5rem, 100vw - 2rem)"
+                       alt="The Select a vibration pattern screen with the Presets section open and highlighted. Short buzz double is selected. Other presets are short and long buzz single, double and triple, short-long-short and long-short-long."
+                       width="1280" height="2856" loading="lazy">
+                </a>
+                <figcaption>3a. Choose a preset, then tap the green tick</figcaption>
+              </figure>
+              <figure>
+                <a class="zoom" href="/images/how-to/pattern-3b.webp">
+                  <img src="/images/how-to/pattern-3b-240.webp"
+                       srcset="/images/how-to/pattern-3b-120.webp 120w, /images/how-to/pattern-3b-150.webp 150w, /images/how-to/pattern-3b-180.webp 180w, /images/how-to/pattern-3b-210.webp 210w, /images/how-to/pattern-3b-240.webp 240w, /images/how-to/pattern-3b-300.webp 300w, /images/how-to/pattern-3b-360.webp 360w, /images/how-to/pattern-3b-420.webp 420w, /images/how-to/pattern-3b-480.webp 480w, /images/how-to/pattern-3b-600.webp 600w, /images/how-to/pattern-3b-720.webp 720w, /images/how-to/pattern-3b-960.webp 960w, /images/how-to/pattern-3b.webp 1280w"
+                       sizes="min(7.5rem, 100vw - 2rem)"
+                       alt="The same screen with the Custom section open and highlighted, showing a buzz length of 400 milliseconds, 2 buzzes and 300 milliseconds between buzzes, with a Test button below."
+                       width="1280" height="2856" loading="lazy">
+                </a>
+                <figcaption>3b. Or make your own under <strong>Custom</strong> (<strong>Test</strong> tries it out)</figcaption>
+              </figure>
+            </li>
+            <li class="shot-pair">
+              <figure>
+                <a class="zoom" href="/images/how-to/pattern-4a.webp">
+                  <img src="/images/how-to/pattern-4a-240.webp"
+                       srcset="/images/how-to/pattern-4a-120.webp 120w, /images/how-to/pattern-4a-150.webp 150w, /images/how-to/pattern-4a-180.webp 180w, /images/how-to/pattern-4a-210.webp 210w, /images/how-to/pattern-4a-240.webp 240w, /images/how-to/pattern-4a-300.webp 300w, /images/how-to/pattern-4a-360.webp 360w, /images/how-to/pattern-4a-420.webp 420w, /images/how-to/pattern-4a-480.webp 480w, /images/how-to/pattern-4a-600.webp 600w, /images/how-to/pattern-4a-720.webp 720w, /images/how-to/pattern-4a-960.webp 960w, /images/how-to/pattern-4a.webp 1280w"
+                       sizes="min(7.5rem, 100vw - 2rem)"
+                       alt="The Vibration settings conflict screen. It says Gmail now has its custom pattern, with a Play button, explains that Gmail's own vibration and Vibrate mode can distort the pattern, and has an Open Gmail notification settings button."
+                       width="1280" height="2856" loading="lazy">
+                </a>
+                <figcaption>4a. Tap the app's <strong>notification settings</strong> button and switch off its vibration</figcaption>
+              </figure>
+              <figure>
+                <a class="zoom" href="/images/how-to/pattern-4b.webp">
+                  <img src="/images/how-to/pattern-4b-240.webp"
+                       srcset="/images/how-to/pattern-4b-120.webp 120w, /images/how-to/pattern-4b-150.webp 150w, /images/how-to/pattern-4b-180.webp 180w, /images/how-to/pattern-4b-210.webp 210w, /images/how-to/pattern-4b-240.webp 240w, /images/how-to/pattern-4b-300.webp 300w, /images/how-to/pattern-4b-360.webp 360w, /images/how-to/pattern-4b-420.webp 420w, /images/how-to/pattern-4b-480.webp 480w, /images/how-to/pattern-4b-600.webp 600w, /images/how-to/pattern-4b-720.webp 720w, /images/how-to/pattern-4b-960.webp 960w, /images/how-to/pattern-4b.webp 1280w"
+                       sizes="min(7.5rem, 100vw - 2rem)"
+                       alt="The lower part of the same screen. Step 1, switch off Gmail's vibration, and Step 2, set Gmail's notification sound to Silent, are both ticked and highlighted, above a box explaining what each choice means and a Done button."
+                       width="1280" height="2856" loading="lazy">
+                </a>
+                <figcaption>4b. Back in Notibrate, check the steps are ticked, then tap <strong>Done</strong></figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <a class="zoom" href="/images/how-to/pattern-5.webp">
+                  <img src="/images/how-to/pattern-5-240.webp"
+                       srcset="/images/how-to/pattern-5-120.webp 120w, /images/how-to/pattern-5-150.webp 150w, /images/how-to/pattern-5-180.webp 180w, /images/how-to/pattern-5-210.webp 210w, /images/how-to/pattern-5-240.webp 240w, /images/how-to/pattern-5-300.webp 300w, /images/how-to/pattern-5-360.webp 360w, /images/how-to/pattern-5-420.webp 420w, /images/how-to/pattern-5-480.webp 480w, /images/how-to/pattern-5-600.webp 600w, /images/how-to/pattern-5-720.webp 720w, /images/how-to/pattern-5-960.webp 960w, /images/how-to/pattern-5.webp 1280w"
+                       sizes="min(7.5rem, 100vw - 2rem)"
+                       alt="Notibrate's home screen with a Changes applied message highlighted."
+                       width="1280" height="2856" loading="lazy">
+                </a>
+                <figcaption>5. Notibrate shows <strong>Changes applied</strong></figcaption>
+              </figure>
+            </li>
+          </ol>
         </li>
 
         <!-- STEP 3 -->
-        <li>
+        <li class="step-wide">
           <div>
             <h2>Turn off the app's own vibration</h2>
             <p>So you don't feel a double buzz, switch off the vibration in that app's own notification
-              settings. Notibrate shows you how when you set up a pattern.</p>
+              settings. Notibrate shows you how when you set up a pattern (pictures 4a and 4b above).</p>
             <p>If you use <strong>Vibrate</strong> mode, set the app's notification sound to
               <strong>Silent</strong> too, otherwise Android turns the sound into an extra buzz.</p>
           </div>
-          <figure class="screenshot">
-            <!-- SCREENSHOT PLACEHOLDER: replace the <div> with
-                 <img src="/images/how-to-3.png" alt="describe the screenshot here"
-                      width="1080" height="2280" loading="lazy"> -->
-            <div class="shot-placeholder">Screenshot: switching off the app's vibration</div>
-            <figcaption>Switching off the app's own vibration</figcaption>
-          </figure>
         </li>
 
         <!-- STEP 4 -->

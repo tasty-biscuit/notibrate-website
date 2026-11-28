@@ -304,6 +304,22 @@ main { padding-bottom: 3rem; }
   list-style: none;
 }
 .shots li + li { margin-top: 0; }
+/* Two pictures that belong together (e.g. 3a and 3b): they take two places side by side,
+   sit closer together and share a soft background so they read as one item */
+.shots { container-type: inline-size; }
+.shots .shot-pair {
+  grid-column: 1 / -1;   /* very narrow screens or big text: the pair gets its own line */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin: -0.5rem -0.2rem;   /* the small side margin leaves a gap between two pairs */
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  background: var(--faq-row);
+}
+@container (min-width: 16rem) {
+  .shots .shot-pair { grid-column: span 2; }
+}
 .shots figure { margin: 0; }
 .shots img {
   display: block;
