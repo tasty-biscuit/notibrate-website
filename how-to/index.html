@@ -40,9 +40,9 @@
   </header>
 
   <!-- ===== PAGE CONTENT – edit the text below =====
-       DRAFT TEXT: Tim, please check each step matches the app's real button names.
-       SCREENSHOTS: change width and height to each picture's real size in pixels
-       (right-click the file > Properties > Details). -->
+       Each step is one <li> below, with its text first and then its pictures.
+       PICTURES: each comes in several sizes in images/how-to/, so to add or change one,
+       ask Claude to make the sizes. -->
   <main>
     <div class="wrap">
       <h1 id="main" tabindex="-1">How to use Notibrate</h1>
@@ -257,22 +257,67 @@
           </ol>
         </li>
 
-        <!-- STEP 4 -->
-        <li>
+        <!-- STEP 4 (text on top, then a row of pictures)
+             figcaption = the short label everyone sees, alt="..." = the screen-reader description. -->
+        <li class="step-wide">
           <div>
-            <h2>Keep Notibrate running</h2>
-            <p>Some phones put apps to sleep to save battery. To stop this, go to
-              <strong>Settings › Keep Notibrate running</strong> in Notibrate, tap <strong>Battery</strong>
-              and choose <strong>Unrestricted</strong> (the names vary between phones).</p>
-            <p>That's it. Your phone will now buzz differently for each app you've set up.</p>
+            <h2>See which apps have a pattern</h2>
+            <p>To check which apps you've given a pattern, or to remind yourself what an app's pattern
+              is, open the app list and show only the apps with a pattern. Each one has a vibration icon
+              next to it: tap the icon to see the app's pattern, and tap <strong>Play</strong> to feel it.</p>
+            <!-- Shows "Tap" on phones and tablets, "Click" on computers with a mouse or trackpad -->
+            <p class="shots-hint"><span class="say-tap">Tap</span><span class="say-click">Click</span> any picture to see it larger.</p>
           </div>
-          <figure class="screenshot">
-            <!-- SCREENSHOT PLACEHOLDER: replace the <div> with
-                 <img src="/images/how-to-4.png" alt="describe the screenshot here"
-                      width="1080" height="2280" loading="lazy"> -->
-            <div class="shot-placeholder">Screenshot: battery setting</div>
-            <figcaption>Setting battery use to Unrestricted</figcaption>
-          </figure>
+          <ol class="shots" role="list">
+            <li>
+              <figure>
+                <a class="zoom" href="/images/how-to/applied-1.webp">
+                  <img src="/images/how-to/applied-1-240.webp"
+                       srcset="/images/how-to/applied-1-120.webp 120w, /images/how-to/applied-1-150.webp 150w, /images/how-to/applied-1-180.webp 180w, /images/how-to/applied-1-210.webp 210w, /images/how-to/applied-1-240.webp 240w, /images/how-to/applied-1-300.webp 300w, /images/how-to/applied-1-360.webp 360w, /images/how-to/applied-1-420.webp 420w, /images/how-to/applied-1-480.webp 480w, /images/how-to/applied-1-600.webp 600w, /images/how-to/applied-1-720.webp 720w, /images/how-to/applied-1-960.webp 960w, /images/how-to/applied-1.webp 1280w"
+                       sizes="min(7.5rem, 100vw - 2rem)"
+                       alt="Notibrate's home screen with the Choose an app button highlighted."
+                       width="1280" height="2856" loading="lazy">
+                </a>
+                <figcaption>1. Tap <strong>Choose an app</strong></figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <a class="zoom" href="/images/how-to/applied-2.webp">
+                  <img src="/images/how-to/applied-2-240.webp"
+                       srcset="/images/how-to/applied-2-120.webp 120w, /images/how-to/applied-2-150.webp 150w, /images/how-to/applied-2-180.webp 180w, /images/how-to/applied-2-210.webp 210w, /images/how-to/applied-2-240.webp 240w, /images/how-to/applied-2-300.webp 300w, /images/how-to/applied-2-360.webp 360w, /images/how-to/applied-2-420.webp 420w, /images/how-to/applied-2-480.webp 480w, /images/how-to/applied-2-600.webp 600w, /images/how-to/applied-2-720.webp 720w, /images/how-to/applied-2-960.webp 960w, /images/how-to/applied-2.webp 1280w"
+                       sizes="min(7.5rem, 100vw - 2rem)"
+                       alt="The Select app(s) screen with the filter button highlighted and its menu open, offering Show all, Show pattern assigned only, which is highlighted, and Show ticked apps only. Gmail has a vibration icon next to it."
+                       width="1280" height="2856" loading="lazy">
+                </a>
+                <figcaption>2. Tap the filter button, then <strong>Show pattern assigned only</strong></figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <a class="zoom" href="/images/how-to/applied-3.webp">
+                  <img src="/images/how-to/applied-3-240.webp"
+                       srcset="/images/how-to/applied-3-120.webp 120w, /images/how-to/applied-3-150.webp 150w, /images/how-to/applied-3-180.webp 180w, /images/how-to/applied-3-210.webp 210w, /images/how-to/applied-3-240.webp 240w, /images/how-to/applied-3-300.webp 300w, /images/how-to/applied-3-360.webp 360w, /images/how-to/applied-3-420.webp 420w, /images/how-to/applied-3-480.webp 480w, /images/how-to/applied-3-600.webp 600w, /images/how-to/applied-3-720.webp 720w, /images/how-to/applied-3-960.webp 960w, /images/how-to/applied-3.webp 1280w"
+                       sizes="min(7.5rem, 100vw - 2rem)"
+                       alt="The app list now shows only Gmail and Messages. The vibration icons next to them are highlighted."
+                       width="1280" height="2856" loading="lazy">
+                </a>
+                <figcaption>3. Each app with a pattern has a vibration icon</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <a class="zoom" href="/images/how-to/applied-4.webp">
+                  <img src="/images/how-to/applied-4-240.webp"
+                       srcset="/images/how-to/applied-4-120.webp 120w, /images/how-to/applied-4-150.webp 150w, /images/how-to/applied-4-180.webp 180w, /images/how-to/applied-4-210.webp 210w, /images/how-to/applied-4-240.webp 240w, /images/how-to/applied-4-300.webp 300w, /images/how-to/applied-4-360.webp 360w, /images/how-to/applied-4-420.webp 420w, /images/how-to/applied-4-480.webp 480w, /images/how-to/applied-4-600.webp 600w, /images/how-to/applied-4-720.webp 720w, /images/how-to/applied-4-960.webp 960w, /images/how-to/applied-4.webp 1280w"
+                       sizes="min(7.5rem, 100vw - 2rem)"
+                       alt="A pop-up reading Messages: Short buzz, triple, with Play and OK buttons."
+                       width="1280" height="2856" loading="lazy">
+                </a>
+                <figcaption>4. Tap an app's vibration icon to see its pattern. <strong>Play</strong> lets you feel it</figcaption>
+              </figure>
+            </li>
+          </ol>
         </li>
       </ol>
 
